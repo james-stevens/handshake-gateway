@@ -2,3 +2,6 @@
 ::respawn:/usr/local/bin/start_syslogd
 ::respawn:/usr/sbin/crond -f -l 9
 ::respawn:/usr/local/bin/start_bind
+::respawn:/usr/sbin/nginx -g "daemon off;" >/tmp/nginx.log 2>&1
+::respawn:/usr/sbin/php-fpm8 --nodaemonize --fpm-config /etc/php8/php-fpm.conf > /tmp/fpm.log 2>&1
+

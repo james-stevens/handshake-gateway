@@ -7,6 +7,8 @@ RUN apk update
 RUN apk upgrade
 
 RUN apk add bind
+RUN apk add nginx
+RUN apk add php8 php8-fpm php8-session php8-curl php8-xml php8-simplexml php8-ctype
 
 RUN mkdir -p /opt /opt/named /opt/named/dev /opt/named/etc
 RUN mkdir -p /opt/named/etc/bind /opt/named/zones /opt/named/var /opt/named/var/run
@@ -24,5 +26,16 @@ COPY update_servers /etc/periodic/weekly
 COPY start_syslogd /usr/local/bin
 COPY startup /usr/local/bin
 COPY start_bind /usr/local/bin
+
+COPY www.conf /etc/php8/php-fpm.d/www.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+
+RUN cd /tmp ; wget https://github.com/james-stevens/glype/archive/refs/tags/v1.0.tar.gz
+
+RUN cd /opt ; tar xf /tmp/v1.0.tar.gz
+RUN ln -s /opt/glype-1.0 /opt/htdocs
+
+RUN mkdir -p /opt/pems
+COPY certkey.pem /opt/pems
 
 CMD [ "/sbin/init" ]
