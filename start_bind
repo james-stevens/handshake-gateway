@@ -1,4 +1,11 @@
 #! /bin/sh
+##########################################################################
+#                                                                        #
+#    (c) Copyright 2021-2021 JRCS Ltd - All Rights Reserved              #
+#                                                                        #
+##########################################################################
+
+chown named: /opt/named/zones
 
 extra="-4"
 if test "${WITH_BIND_V6}" = "Y"; then extra=""; fi

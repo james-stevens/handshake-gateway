@@ -9,6 +9,21 @@ RUN apk upgrade
 RUN apk add bind
 RUN apk add nginx
 RUN apk add php8 php8-fpm php8-session php8-curl php8-xml php8-simplexml php8-ctype
+RUN apk add squid squid-lang-uk
+
+RUN apk add python3
+RUN apk add py-pip
+RUN apk add nginx
+
+RUN pip install --upgrade pip
+RUN pip install gunicorn
+RUN pip install Flask
+RUN pip install dnspython
+
+RUN mkdir -p /usr/local/dns
+COPY *.py /usr/local/dns/
+RUN python3 -m compileall /usr/local/dns/
+COPY start_wsgi /usr/local/bin/
 
 RUN mkdir -p /opt /opt/named /opt/named/dev /opt/named/etc
 RUN mkdir -p /opt/named/etc/bind /opt/named/zones /opt/named/var /opt/named/var/run
