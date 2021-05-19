@@ -25,7 +25,7 @@ All the other services use this service, so will also no work until this seeding
 
 The DoH service follows the [Google JSON/DNS/API](https://developers.google.com/speed/public-dns/docs/doh/json) spec.
 
-The Certificate is issued by a priate authority for the name `wwwhns.regserv.net`, which resolve to `127.0.0.1`. The file `myCA.pem`
+The Certificate is issued by a private certificate authority for the name `wwwhns.regserv.net`, which resolve to `127.0.0.1`. The file `myCA.pem`
 is the public certificate for that authority. If you wish to use your own certificate, replace the file `/opt/pems/certket.pem`
 with a PEM of both the certificate & private key.
 
