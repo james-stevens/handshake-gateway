@@ -1,3 +1,3 @@
-# handshake-webproxy
+# handshake-gateway
 
-This conainer will run a webproxy that will let you browser Handshake native websites
+This conainer runs a range of services to give you access into the Handshake Internet space
