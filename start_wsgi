@@ -3,6 +3,7 @@
 # Alternative license arrangements are possible, contact me for more information
 
 export PATH=$PATH:/opt/python/bin
+export DOH_SERVERS=127.0.0.1
 
 cd /usr/local/dns
-exec gunicorn --bind unix:/ram/dnsflsk_$1.sock wsgi
+exec gunicorn --bind unix:/run/dnsflsk_$1.sock wsgi

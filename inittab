@@ -7,3 +7,5 @@
 ::respawn:/usr/local/bin/start_wsgi 3
 
 ::respawn:/usr/sbin/nginx -g "daemon off;" >/tmp/nginx.log 2>&1
+
+::respawn:/usr/sbin/squid --foreground
