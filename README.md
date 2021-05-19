@@ -43,6 +43,7 @@ In this case its usefulness is in the fact that it know how to access Handshake 
 browser to use the proxy cache (all browsers support this), and you will then be able to access Handshake websites directly from
 you favourite browser.
 
+The proxy cache runs on port `3128`. If you are running this container on your desktop PC, then the IP Address will be `127.0.0.1`
 
 
 ## Handshake aware Website Proxy Service
@@ -53,6 +54,10 @@ is that you can then access Handshake Websites without having to change your bro
 The disadvantage is that, due to the complexity of modern websites, this technique often does not correctly display modern sites.
 
 So its a quick & easy way to get access to a Handhsake web site, but may not always work.
+
+If you are running this container on your desktop, you should be able to access the Website Proxy Service at the following URL
+
+	https://wwwhns.regserv.net/
 
 
 ## Some Handshake Websites to try out
