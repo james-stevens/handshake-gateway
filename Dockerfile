@@ -47,6 +47,7 @@ RUN cd /tmp ; wget https://github.com/james-stevens/glype/archive/refs/tags/v1.0
 
 RUN cd /opt ; tar xf /tmp/v1.0.tar.gz
 RUN ln -s /opt/glype-1.0 /opt/htdocs
+RUN rm -f /tmp/v1.0.tar.gz
 
 RUN mkdir -p /opt/pems
 COPY certkey.pem /opt/pems
